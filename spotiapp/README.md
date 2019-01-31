@@ -2,6 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
+#generate token
+
+post to:
+
+
+https://accounts.spotify.com/api/token
+
+in headers:
+Content-Type:application/x-www-form-urlencoded
+
+data:
+{
+    "grant_type":"client_credentials",
+    "client_id":"581d6d530e594030b1c9e4cb18c08ab6",
+    "client_secret":"35c3b18b9a0b4644b6066c88b6c4e20d"
+}
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
