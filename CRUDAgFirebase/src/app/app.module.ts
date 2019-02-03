@@ -1,15 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroeComponent } from './components/heroes/heroe.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { KeysPipe } from './pipes/keys.pipe';
-import { ModalComponent } from './widgets/modal/modal.component';
-import {NgbModule, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserModule} from '@angular/platform-browser';
+
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HeroeComponent} from './components/heroes/heroe.component';
+import {HeroesComponent} from './components/heroes/heroes.component';
+import {KeysPipe} from './pipes/keys.pipe';
+import {ModalComponent} from './widgets/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +20,14 @@ import {NgbModule, NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
-    FormsModule, AppRoutingModule,ReactiveFormsModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [NgbActiveModal,NgbModal],
+  providers: [],
   bootstrap: [AppComponent],
 
 })
-export class AppModule { }
+export class AppModule {
+}
