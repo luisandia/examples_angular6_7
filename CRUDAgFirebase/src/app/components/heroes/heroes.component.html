@@ -1,0 +1,77 @@
+<h1>Heroes</h1>
+<hr />
+<div class="row">
+  <div class="col-md-12 text-right">
+    <!-- Al estar dentro de un router-outlet hay que añadir un "/" para que salga fuera y acceda
+        correctamente a la ruta que queremos ir
+  -->
+    <button
+      [routerLink]="['/heroe', 'new']"
+      type="button"
+      class="btn btn-outline-primary"
+      type="button"
+      name="button"
+    >
+      New Hero
+    </button>
+  </div>
+</div>
+<div  class="row animated fadeIn">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-sm table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Casa</th>
+            <th scope="col" class="text-right">Options</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="!loading">
+          <tr *ngFor="let k of (heroes | keys); let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ heroes[k].nombre }}</td>
+            <td>{{ heroes[k].casa }}</td>
+            <td class="text-right w120">
+              <button
+                [routerLink]="['/heroe', k]"
+                type="button"
+                class="btn btn-outline-success"
+                type="button"
+                name="button"
+              >
+                <i class="fas fa-edit"></i> Editar</button
+              >&nbsp;&nbsp;
+              <button
+                data-toggle="modal"
+                data-target="#myModal"
+                (click)="delete(k)"
+                type="button"
+                class="btn btn-outline-danger"
+                type="button"
+                name="button"
+              >
+                <i class="fas fa-trash-alt"></i> Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div *ngIf="heroes === null" class="alert alert-info" role="alert">
+        <strong>No hay</strong> registros que mostrar
+      </div>
+      <div *ngIf="loading" class="alert alert-warning" role="alert">
+        <strong>Cargando</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal-content
+  [key$]="key"
+  [heroes]="heroes"
+  [body]="'Estas seguro que quieres eliminar'"
+  [title]="heroes && heroes[key]?.nombre"
+  (confirmacion)="refresh($event)"
+></app-modal-content>
