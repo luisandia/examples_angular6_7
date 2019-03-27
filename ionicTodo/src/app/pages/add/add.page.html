@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>add to List</ion-title>
+<ion-header no-border>
+  <ion-toolbar color="dark">
+  <ion-buttons slot="start">
+  <ion-back-button color="tertiary" defaultHref="/"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Name of List</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content color="dark">
+
+<ion-list color="dark">
+  <ion-item color="dark">
+    <ion-label position="floating">New Item</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+</ion-list>
+<ion-list>
+<ion-list-header color="dark">
+  <ion-label>Tasks to do </ion-label>
+</ion-list-header>
+
+<ion-item color="dark">
+  <ion-checkbox color="tertiary" slot="start"></ion-checkbox>
+  <ion-label>Remember launch</ion-label>
+</ion-item>
+
+</ion-list>
 
 </ion-content>
