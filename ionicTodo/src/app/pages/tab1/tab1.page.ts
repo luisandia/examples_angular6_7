@@ -22,7 +22,7 @@ export class Tab1Page {
       inputs: [
         {
           name: 'title',
-          type:'text',
+          type: 'text',
           placeholder: 'Name list'
         }
       ],
@@ -37,10 +37,11 @@ export class Tab1Page {
         text: 'Create',
         handler: (data) => {
           console.log(data)
-          if(data.title.length===0){
+          if (data.title.length === 0) {
             return;
           }
-          this.wishesService.createList(data.title);
+          const listId=this.wishesService.createList(data.title);
+          this.router.navigateByUrl(`/tabs/tab1/add/${listId}`);
         }
       }
       ]
