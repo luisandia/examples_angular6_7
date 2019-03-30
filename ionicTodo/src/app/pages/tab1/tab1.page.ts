@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { WishesService } from 'src/app/services/wishes.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { Placeholder } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-tab1',
