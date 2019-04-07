@@ -37,4 +37,11 @@ export class AddPage implements OnInit {
     }
     this.wishedService.saveStorage();
   }
+
+  delete(i:number){
+    console.log("borrando ",i);
+    console.log(this.list);
+    this.list.items.splice(i,1);
+    this.wishedService.saveStorage();
+  }
 }
