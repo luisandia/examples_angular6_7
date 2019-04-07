@@ -27,7 +27,8 @@ export class AddPage implements OnInit {
     this.wishedService.saveStorage();
   }
   changeCheck(item: ListaItem) {
-    const todo = this.list.items.filter(itemData => !itemData.compleado).length;
+    const todo = this.list.items.filter(itemData => !itemData.finished).length;
+    console.log(todo);
     if (todo === 0) {
       this.list.endAt = new Date();
       this.list.finished = true;

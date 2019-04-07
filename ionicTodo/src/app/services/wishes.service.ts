@@ -29,6 +29,12 @@ export class WishesService {
   saveStorage() {
     localStorage.setItem('data', JSON.stringify(this.listas));
   }
+
+  deleteList(lista: Lista) {
+    this.listas = this.listas.filter(data => data.id !== lista.id);
+    this.saveStorage();
+  }
+
   loadStorage() {
     if (localStorage.getItem('data')) {
       this.listas = JSON.parse(localStorage.getItem('data'));
